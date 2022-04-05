@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>GPT-3 gegen die Schreibblockade</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='writersDocument.svg') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+    <script src="{{ url_for('static', filename='textFormatter.js') }}"></script>
+    <script src="{{ url_for('static', filename='gptTimer.js') }}"></script>m
+</head>
+<body onload="initEt(); setInterval(gptTimer, 100);">
+    <img src="{{ url_for('static', filename='writersDocument.svg') }}" class="icon" />
+    <h3>GPT-3 gegen die Schreibblockade</h3>
+    <div contenteditable="true" id="editableText">
+        <p class="context">
+          Ersetze diesen Absatz durch ein paar Sätze, die du selbst geschrieben hast.
+          Sie geben das Thema und den Stil vor, mit dem GPT-3 und du anschließend weiter schreiben.
+          Solange du in den letzten 60 Sekunden etwas getippt hast, gehört der Text allein dir.
+          Du hast die volle Kontrolle.
+          Läuft die Frist ab, hilft die GPT-3 auf die Sprünge und schreibt einen Absatz dazu.
+          Du kannst diesen Absatz natürlich editieren, womit du wieder die Kontrolle übernimmst.
+          Wenn du wieder nichts schreibst, wird GPT-3 den nächsten Absatz schreiben und so weiter.
+          Eine „Schreibblockade“ ist damit keine Ausrede mehr! Es entsteht Text, ob du willst oder nicht.
+          Und jetzt lösche diese Anleitung, sonst wird dein Text nur von Schreibblockaden handeln.
+        </p>
+        <p class="automatic">
+            Hier kommt der automatisch erzeugte Text hin. Das hier sind zufällig 80 Zeichen.
+        </p>
+    </div>
+    <div class="timerBar">
+        <p>Zeit, bis GPT-3 weiter schreibt: <span id="remainingTime">60</span> Sekunden.</p>
+        <div class="frame"><div class="filled" id="remainingTimeBar"></div></div>
+    </div>
+</body>
